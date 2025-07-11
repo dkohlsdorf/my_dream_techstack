@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 import mysql.connector
 from mysql.connector import Error
 import os
