@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1>Welcome to Flask HTMX App</h1>
+        <p class="lead">A simple Flask application using MySQL and HTMX for dynamic interactions.</p>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5>Quick Actions</h5>
+            </div>
+            <div class="card-body">
+                <a href="/users" class="btn btn-primary">View Users</a>
+                <button class="btn btn-info" 
+                        hx-get="/users" 
+                        hx-target="#content-area" 
+                        hx-swap="innerHTML">
+                    Load Users (HTMX)
+                </button>
+            </div>
+        </div>
+
+        <div id="content-area" class="mt-4">
+            <!-- Dynamic content will be loaded here -->
+        </div>
+    </div>
+</div>
+{% endblock %}
